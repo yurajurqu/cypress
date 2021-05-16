@@ -2,7 +2,7 @@
     "video": true,
     "screenshotsFolder":"cypress/videos",
     "baseUrl":"http://eaapp.somee.com/",
-    "ignoreTestFiles":"*.js",
+    "ignoreTestFiles":"*.xs",
     "env": {
         "username":"admin"
     }
