@@ -16,3 +16,13 @@ And(
     cy.get(".btn").click({ force: true });
   }
 );
+
+Given(/^I login as following$/, (datatable)=> {
+    
+    datatable.hashes().forEach(row => {
+        console.log(row);
+        cy.get("#UserName").type(row.UserName);
+        cy.get("#Password").type(row.Password, {log:false});
+    });
+    cy.get(".btn").click({ force: true });
+  });
