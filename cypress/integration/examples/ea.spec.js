@@ -1,33 +1,16 @@
 /// <reference types="Cypress" />
 
 describe("Testing of EA app", () => {
-    
-    it("login application", () => {
+
+    before('Login to app', () => {
         cy.visit("http://eaapp.somee.com/");
-
-        //long way
-        // cy.get("#loginLink").then(($link) => {
-        //     // const linkText = $link.text();
-        //     // expect(linkText).is.eql('Login');
-        //     return $link.text();
-        // }).as('linkText');
-
-        //short way with invoke
-        cy.get("#loginLink").invoke('text').as('linkText');
-
-        cy.get('@linkText').then(($x) => {
-            expect($x).is.eql('Login');
+        cy.fixture('loginData.json').as('user');
+        cy.get('@user').then((user) => {
+            cy.login(user.UserName, user.Password);
         });
-
-        cy.get('#loginLink').click();
-
-        cy.url().should("include", "/Account/Login");
-
-        cy.get('#UserName').type("admin");
-        cy.get('#Password').type("password");
-
-        cy.get(".btn").click({force: true});
-
+    });
+    
+    it("Perform benefit check", () => {
         cy.contains('Employee List').click();
 
         // cy.get('.table').find('tr > td').contains('Prashanth').parent().contains('Benefits').click();
