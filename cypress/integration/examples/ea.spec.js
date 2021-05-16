@@ -3,7 +3,7 @@
 describe("Testing of EA app", () => {
 
     before('Login to app', () => {
-        cy.visit("http://eaapp.somee.com/");
+        cy.visit("/");
         cy.fixture('loginData.json').as('user');
         cy.get('@user').then((user) => {
             cy.login(user.UserName, user.Password);
@@ -11,7 +11,7 @@ describe("Testing of EA app", () => {
     });
     
     it("Perform benefit check", () => {
-        cy.contains('Employee List').click();
+        cy.contains('Employee List 666').click();
 
         // cy.get('.table').find('tr > td').contains('Prashanth').parent().contains('Benefits').click();
         // cy.get('.table').find('tr').as('rows');
