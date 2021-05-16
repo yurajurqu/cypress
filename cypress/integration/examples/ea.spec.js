@@ -11,7 +11,7 @@ describe("Testing of EA app", () => {
     });
     
     it("Perform benefit check", () => {
-        cy.contains('Employee List 666').click();
+        cy.contains('Employee List').click();
 
         // cy.get('.table').find('tr > td').contains('Prashanth').parent().contains('Benefits').click();
         // cy.get('.table').find('tr').as('rows');

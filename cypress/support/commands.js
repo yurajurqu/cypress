@@ -36,7 +36,7 @@ Cypress.Commands.add('login', (username, password) => {
 
     cy.url().should("include", "/Account/Login");
 
-    cy.get('#UserName').type(username);
+    cy.get('#UserName').type(Cypress.env('username'));
     cy.get('#Password').type(password);
 
     cy.get(".btn").click({force: true});
