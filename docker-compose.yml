@@ -5,3 +5,5 @@ services:
         build: .
         container_name: cypress
         command: npx cypress run
+        volumes:  
+        - C:\ws\data:/app/cypress/videos

@@ -1,6 +1,6 @@
 {
     "video": true,
-    "screenshotsFolder":"cypress/videos",
+    "screenshotsFolder":"/app/cypress/videos",
     "baseUrl":"http://eaapp.somee.com/",
     "ignoreTestFiles":"*.xs",
     "env": {
