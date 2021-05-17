@@ -1,12 +1,16 @@
 {
     "video": true,
-    "screenshotsFolder":"/app/cypress/videos",
+    "screenshotsFolder":"cypress/videos",
     "baseUrl":"http://eaapp.somee.com/",
     "ignoreTestFiles":"*.xs",
     "env": {
         "username":"admin"
     },
     "chromeWebSecurity": false,
-    "modifyObstructiveCode": false
+    "modifyObstructiveCode": false,
+    "reporter":"cypress-multi-reporters",
+    "reporterOptions": {
+        "configFile":"reporterOptions.json"
+    }
 
 }
