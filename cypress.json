@@ -5,5 +5,8 @@
     "ignoreTestFiles":"*.xs",
     "env": {
         "username":"admin"
-    }
+    },
+    "chromeWebSecurity": false,
+    "modifyObstructiveCode": false
+
 }
